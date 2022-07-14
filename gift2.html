@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: "Poppins",sans-serif;
+        }
+        body{
+            height: 100vh;
+            background: radial-gradient(rgb(250, 223, 223),rgb(254, 141, 160));
+        }
+        .container{
+            height: 60vh;
+            width: 30vw;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%,-50%);
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+        }
+        .box{
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            top: 150px;
+            left: 100px;
+            transform-style: preserve-3d;
+            animation: animate 20s infinite;
+        }
+        @keyframes animate{
+            0%{
+                transform: rotateX(0deg) rotateY(-45deg);
+            }
+            12.5%{
+                transform: rotateX(90deg) rotateY(-45deg);
+            }
+            25%{
+                transform: rotateX(180deg) rotateY(-45deg);
+            }
+            37.5%{
+                transform: rotateX(270deg) rotateY(-45deg);
+            }
+            50%{
+                transform: rotateX(360deg) rotateY(-45deg);
+            }
+            62.5%{
+                transform: rotateX(270deg) rotateY(-45deg);
+            }
+            75%{
+                transform: rotateX(180deg) rotateY(-45deg);
+            }
+            87.5%{
+                transform: rotateX(90deg) rotateY(-45deg);
+            }
+            100%{
+                transform: rotateX(0deg) rotateY(-45deg);
+            }
+        }
+        .card{
+            height: 400px;
+            width: 400px;
+            text-align: center;
+            padding: 100px 0px;
+            color: white;
+            background: black;
+            border: 2px solid white;
+            font-size: 32px;
+            box-sizing: border-box;
+            position: absolute;
+            transition: all 1s;
+        }
+        #front{
+            background: url(images/room1.jpg);
+            background-size: cover;
+            transform: translateZ(200px);
+        }
+        #back{
+            background: url(images/back.jpg);
+            background-size: cover;
+            transform: translateZ(-200px);
+        }
+        #left{
+            background: url(images/left.jpg);
+            background-size: cover;
+            right: 200px;
+            transform: rotateY(-90deg);
+        }
+        #right{
+            background: url(images/right.jpg);
+            background-size: cover;
+            left: 200px;
+            transform: rotateY(90deg);
+        }
+        #top{
+            background: url(images/top.jpg);
+            background-size: cover;
+            bottom: 200px;
+            transform: rotateX(90deg);
+        }
+        #bottom{
+            background: url(images/bottom.jpg);
+            background-size: cover;
+            top: 200px;
+            transform: rotateX(-90deg);
+        }
+        input{
+            height: 50px;
+            width: 200px;
+            background: rgb(254, 141, 160);
+            border: 2px solid black;
+            color: black;
+            font-size: 22px;
+            cursor: pointer;
+            position: absolute;
+            top: -150px;
+            left: 200px;
+        }
+        input:hover{
+            border: 3px solid black;
+            background: crimson;
+            font-weight: bold;
+            color: white;
+            transition: 0.5s ease;
+        }
+        input:focus~ .box #front{
+            transform: translateZ(288px) rotateY(360deg);
+        }
+        input:focus~ .box #back{
+            transform: translateZ(-288px) rotateY(360deg);
+        }
+        input:focus~ .box #left{
+            right: 288px;
+        }
+        input:focus~ .box #right{
+            left: 288px;
+        }
+        input:focus~ .box #top{
+            bottom: 288px;
+        }
+        input:focus~ .box #bottom{
+            top: 288px;
+        }
+        .insidebtn{
+            height: 200px;
+            width: 75px;
+            background: rgb(254, 141, 160);
+            border: 2px solid black;
+            color: black;
+            font-size: 22px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+        }
+        .insidebtn:hover{
+            border: 3px solid black;
+            background: crimson;
+            font-weight: bold;
+            color: white;
+            transition: 0.5s ease;
+        }
+    </style>
+    <title>Aapke hak ka 2nd gift</title>
+</head>
+<body>
+    <div class="container">
+        <input type="button" value="Click Me First!">
+        <div class="box">
+            <div class="card" id="front"></div>
+            <div class="card" id="back"></div>
+            <div class="card" id="left"></div>
+            <div class="card" id="right"></div>
+            <div class="card" id="top"></div>
+            <div class="card" id="bottom"></div>
+        </div>
+    </div>
+    
+    <a href="index3.html"><button class="insidebtn">Click to go to the next stage bby!</button></a>
+</body>
+</html>

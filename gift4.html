@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Gift 1</title>
+    <link rel="stylesheet" href="finalstyle.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="images">
+            <img src="images/anushawish.png" alt="us1">
+            <img src="images/kanika.png" alt="us1">
+            <img src="images/aviral.png" alt="us1">
+            <img src="images/simran.png" alt="us1">
+            <img src="images/sahil.png" alt="us1">
+            <img src="images/disha.png" alt="us1">
+            <img src="images/anvita.png" alt="us1">
+            <img src="images/shreyagoyal.png" alt="us1">
+        </div>
+        <div onclick="side_slide(-1)" class="slide left">
+            <i class="fas fa-angle-left"><</i>
+        </div>
+        <div onclick="side_slide(1)" class="slide right">
+            <i class="fas fa-angle-right">></i>
+        </div>
+        <div class="btm-sliders">
+            <span onclick="btm_slide(1)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(2)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(3)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(4)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(5)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(6)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(7)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span onclick="btm_slide(8)">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    <a href="gift41.html"><button class="button"><span>NEXT</span></button></a>
+    <script>
+        var indexValue = 1;
+        showImg(indexValue);
+        function btm_slide(e){showImg(indexValue = e);}
+        function side_slide(e){showImg(indexValue += e);}
+        function showImg(e){
+            var i;
+            const img = document.querySelectorAll('img');
+            const sliders = document.querySelectorAll('.btm-sliders spam');
+            if(e > img.length){indexValue = 1;}
+            if(e < 1){indexValue = img.length;}
+            for(i = 0; i < img.length; i++) {
+                img[i].style.display = "none";
+            }
+            img[indexValue-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
